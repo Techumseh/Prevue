@@ -1,16 +1,31 @@
 import React from 'react';
-import {Link} frim 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-const Layouts = () => {
+export default function Layout(props) {
+  const { currentUser } = props
   return (
     <div>
       <header>
         <h1>Prevue</h1>
-        <Link to='/login'>SignIn/SignUp</Link>
-      </header>
+        {currentUser ? (
+          <React.Fragment>
+            <p>{currentUser.userName}</p>
+            <button>SignOut</button>
+          </React.Fragment>
+        ) : (
+       
+            <Link to='/login'>SignIn/SignUp</Link>
+            )}
+      </header><hr />
+      {currentUser && (
+        <React.Fragment>
+          <Link>Companies</Link>
+          <Link>Industries</Link>
+        </React.Fragment>
+      )}
       {props.children}
     </div>
   );
 };
 
-export default Layouts;
+// export default Layouts;

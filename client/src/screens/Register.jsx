@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-export default function Login() {
+export default function Register() {
   const [formData, setFormdata] = useState({
     username: '',
-    password: ''
+    password: '',
+    email: ''
   })
   const { username, password } = formData;
   
@@ -20,7 +21,7 @@ export default function Login() {
       e.preventDefault();
       handleLogin(formData);
     }}>
-      <h3>Login</h3>
+      <h3>Sign Up</h3>
       <label>Username:
         <input 
         type='text'
@@ -32,16 +33,20 @@ export default function Login() {
       <br/>
     <label>Password:
      <input 
-     type='passwod'
+        type='password'
         name='password'
         value={password}
-          onChange={handleChange}
-          />
+        onChange={handleChange}
+        />
+      <input 
+        type='email'
+        name='email'
+        value={email}
+        onChange={handleChange}
+        />
     </label>
-    <Link>Register</Link>
+  
     <button>Submit</button>
     </form>
   )
 }
-
-// export default Login;
