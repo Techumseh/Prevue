@@ -28,6 +28,10 @@ export default function MainContainer() {
         <Companies 
           companies={companies}/>
       </route>
+      <route path='/industries'>
+        <Companies 
+          companies={industries} />
+        </route>
   </Switch>
   )
 }
