@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Login() {
   const [formData, setFormdata] = useState({
-    username: '';
+    username: '',
     password: ''
   })
   const { username, password } = formData;
@@ -23,7 +23,7 @@ export default function Login() {
         type='text'
         name='username'
         value={username}
-        onChange={}
+        onChange={hanfleChange}
       </label>
       <br/>
     <label>Password:
@@ -31,7 +31,7 @@ export default function Login() {
      type='passwod'
         name='password'
         value={password}
-        onChange={}
+        onChange={hanfleChange}
     </label>
     <Link>Register</Link>
     <button>Submit</button>
