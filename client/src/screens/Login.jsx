@@ -8,7 +8,7 @@ export default function Login() {
   })
   const { username, password } = formData;
   
-  const hanfleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormdata(prevState => ({
       ...prevState,
@@ -19,19 +19,21 @@ export default function Login() {
     <form>
       <h3>Login</h3>
       <label>Username:
-        <input />
+        <input 
         type='text'
         name='username'
         value={username}
-        onChange={hanfleChange}
+          onChange={handleChange}
+          />
       </label>
       <br/>
     <label>Password:
-     <input />
+     <input 
      type='passwod'
         name='password'
         value={password}
-        onChange={hanfleChange}
+          onChange={handleChange}
+          />
     </label>
     <Link>Register</Link>
     <button>Submit</button>
