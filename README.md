@@ -69,7 +69,7 @@ Database including  3 tables (users, companies, industries)
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](url)
+https://lucid.app/lucidchart/invitations/accept/4dac0c31-8c07-43f5-b8b6-ea3d550fe3ca
 
 - Desktop Landing
 
