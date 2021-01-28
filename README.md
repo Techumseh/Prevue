@@ -156,6 +156,8 @@ https://lucid.app/lucidchart/invitations/accept/a96c4ff6-e926-47f5-b39b-69cc8d4e
 
 #### ERD Model
 
+https://lucid.app/lucidchart/invitations/accept/975396e1-f557-4f64-a771-1444cbb04c81
+
 https://wireframe.cc/duGgIK
 
 <br>
