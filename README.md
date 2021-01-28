@@ -24,20 +24,17 @@
 
 ## Overview
 
-_**Prevue** is an app to discover, rate and review local businesses. Each user has the ability to read reviews of businesses and delete them as necessary. Admin users have the ability to add their business as well as delete them. Only registered users will have the ability to rate and view businesses.
+**Prevue** is an app to discover, rate and review local businesses. Each user has the ability to read reviews of businesses and delete them as necessary. Admin users have the ability to add their business as well as delete them. Only registered users will have the ability to rate and view businesses.
 
 <br>
 
 ## MVP
 
-_ MY MVP is to have a working prototype of this app to include:
+MY MVP is to have a working prototype of this app to include:
 Single user Oauth (Sign Up/Sign In/Logout)
 The ability for users to search for business by industry
 The ability for authorized users to add and delete their buisiness
 The ability for authorized users to rate and review buisiness as well as delete reviews
-
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
 
 <br>
 
@@ -112,8 +109,19 @@ src
       |__ images
       |__ mockups
 |__ components/
-      |__ Header.jsx
-|__ services/
+        |_containers
+          |__ Main.jsx
+       |_Layouts
+          |_Layouts.jsx
+        |_screens
+           |_Login.jsx
+           |_Register.jsx
+         |_services
+           |_ api-assist.jsx
+           |_ auth.jsx
+           |_companies.jsx
+           |_industries.jsx
+
 
 ```
 
