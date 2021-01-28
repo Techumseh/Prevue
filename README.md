@@ -30,7 +30,7 @@ _**Prevue** is an app to discover, rate and review local businesses. Each user h
 
 ## MVP
 
-> MY MVP is to have a working prototype of this app to include:
+_ MY MVP is to have a working prototype of this app to include:
 Single user Oauth (Sign Up/Sign In/Logout)
 The ability for users to search for business by industry
 The ability for authorized users to add and delete their buisiness
