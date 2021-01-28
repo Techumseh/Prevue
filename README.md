@@ -121,7 +121,7 @@ src
            |_ api-assist.jsx
            |_ auth.jsx
            |_companies.jsx
-           |_industries.jsx
+           |_comments.jsx
 
 
 ```
@@ -130,7 +130,7 @@ src
 
 > Use this section to include a link to your component tree.
 
-https://wireframe.cc/s59vOF
+https://lucid.app/lucidchart/invitations/accept/a96c4ff6-e926-47f5-b39b-69cc8d4e2aa6
 
 #### Time Estimates
 
