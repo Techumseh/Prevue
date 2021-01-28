@@ -35,6 +35,7 @@ Single user Oauth (Sign Up/Sign In/Logout)
 The ability for users to search for business by industry
 The ability for authorized users to add and delete their buisiness
 The ability for authorized users to rate and review buisiness as well as delete reviews
+Database including  3 tables (users, companies, industries)
 
 <br>
 
