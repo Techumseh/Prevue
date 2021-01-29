@@ -1,7 +1,5 @@
-import { Switch } from "react-router-dom"
-import { useState } from React
-import { Switch } from 'react-router-dom'
-import { useEffect } from "react";
+import { Switch , Route, useHistory} from "react-router-dom"
+import { useEffect, useState } from "react";
 
 
 export default function MainContainer() {
