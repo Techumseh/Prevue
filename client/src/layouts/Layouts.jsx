@@ -20,7 +20,7 @@ export default function Layout(props) {
       {currentUser && (
         <React.Fragment>
           <Link>Companies</Link>
-          <Link>Industries</Link>
+          <Link>Comments</Link>
         </React.Fragment>
       )}
       {props.children}

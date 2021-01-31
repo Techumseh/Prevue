@@ -1,16 +1,21 @@
-import { Switch , Route, useHistory} from "react-router-dom"
 import { useEffect, useState } from "react";
-
+import { Switch, Route, useHistory } from "react-router-dom";
+import CreateCompany from "../screens/CreateCompany"
+import CreateComments from "../screens/CreateComments"
 
 export default function MainContainer() {
   const [companies, setCompanies] = useState([]);
-  const [industries, setIndustries] = useState([]);
+  const [comments, setComments] = useState([]);
+  const history = useHistory;
+  const { currentUser } = props;
 
   useEffect(() => {
-    const retrieveIndustries = async () => {
-      const industryData = await getAllIndustries();
-      setIndustries(industryData)
-    }  }, [])
+    const retrieveComments = async () => {
+      const commentData = await getAllComments();
+      setIndustries(commentData)
+    }
+    retrieveComments();
+  }, [])
 
   useEffect(() => {
     const retrieveCompanies = async () => {
@@ -18,7 +23,6 @@ export default function MainContainer() {
       setCompanies(companyData)
     }  }, [])
     
-  }, [])
 
   return (
   <Switch>
@@ -26,9 +30,9 @@ export default function MainContainer() {
         <Companies 
           companies={companies}/>
       </route>
-      <route path='/industries'>
+      <route path='/comments'>
         <Companies 
-          companies={industries} />
+          companies={comments} />
         </route>
   </Switch>
   )
