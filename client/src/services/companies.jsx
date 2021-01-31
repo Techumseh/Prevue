@@ -11,6 +11,7 @@ const getCompanies = async () => {
     <p>(companies.name</p>
     ))
   }
-  <button>Create</button>
-  </div>
+
+  <button>Create</button>;
+  
 }
