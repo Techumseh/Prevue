@@ -1,11 +1,11 @@
 import api from './api-config';
 
-export const CreateComments = async (data) => {
+export const createComments = async (data) => {
   const resp = await api.post('/comments', { teacher: data })
   return resp.data
 }
 
-export const readAllComments = async () => {
+export const getAllComments = async () => {
   const resp = await api.get('/comments')
   return resp.data
 }

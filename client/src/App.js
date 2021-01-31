@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import Layout from "./layouts/Layouts"
-import { Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import MainContainer from "./containers/MainContainer";
 import Login from './screens/Login.jsx'
 import { useEffect, useState } from 'react';
 import Register from './screens/Register';
+import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth";
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
