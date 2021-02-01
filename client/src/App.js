@@ -5,6 +5,7 @@ import Login from './screens/Login.jsx'
 import MainContainer from "./containers/MainContainer";
 import Register from './screens/Register';
 import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth";
+import Header from './Header';
 
 
 function App() {
