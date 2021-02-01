@@ -20,7 +20,17 @@ export const updateComments = async (id, data) => {
   return resp.data
 }
 
+export const postComments = async (id, data) => {
+  const resp = await api.post(`/comments/${id}`, { comment : data })
+  return resp.data
+}
+
 export const destroyComments = async (id) => {
   const resp = await api.delete(`/comments/${id}`)
+  return resp.data
+}
+
+export const putComments = async (id, data) => {
+  const resp = await api.put(`/comments/${id}`, { comment : data })
   return resp.data
 }

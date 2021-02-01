@@ -4,10 +4,12 @@ import CreateCompany from "../screens/CreateCompany";
 import CreateComments from "../screens/CreateComments";
 import EditComments from "../screens/EditComments";
 import { getAllCompanies } from "../services/companies";
-import { deleteComments, getAllComments, postComments, putsComments } from "../services/comments";
+import { deleteComments, getAllComments, postComments, putComments, updateComments } from "../services/comments";
+import { newCompany, deleteCompanies } from 'react';
+import { Companies, Comments } from 'react';
 
 
-export default function MainContainer() {
+export default function MainContainer(props) {
   const [companies, setCompanies] = useState([]);
   const [comments, setComments] = useState([]);
   const history = useHistory;
@@ -20,6 +22,26 @@ export default function MainContainer() {
     }
     retrieveComments();
   }, [])
+
+  const handleCreate = async (commentData) => {
+    const newComment = await postComments(commentData);
+    setCompanies(prevState => [...prevState, newCompany])
+    history.push('/companies')
+  }
+  const handleDelete = async (id) => {
+    await deleteCompanies(id);
+    setComments(prevState => prevState.filter(commentItem => {
+      return commentItem.id !== id
+    }))
+  }
+  const handleUpdate = async (id, commentData) => {
+    const updatedComment = await putComments(id, commentData);
+    setComments(prevState => prevState.map(commentItem => {
+      return commentItem.id === Number(id) ? updatedComment : commentItem
+    }))
+    history.push('/comments')
+  }
+
 
   useEffect(() => {
     const retrieveCompanies = async () => {
