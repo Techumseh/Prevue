@@ -5,6 +5,18 @@ export const getAllCompanies = async () => {
   return resp.data;
 }
 
+export const postCompanies = async (companyData) => {
+  const resp = await api.post('/companies', { companies: companyData });
+  return resp.data;
+}
+
+export const deleteCompanies = async (id) => {
+  const resp = await api.delete(`/companies/${id}`);
+  return resp;
+}
+
+
+
 export const addCompany = async (data) => {
   const resp = await api.put('/companies', data);
   return resp.data;
@@ -15,5 +27,5 @@ export const newCompany = async (data) => {
   return resp.data;
 }
 
-  <button>Create</button>;
+  //<button>Create</button>;
   
