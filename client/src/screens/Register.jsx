@@ -47,9 +47,8 @@ export default function Register(props) {
           value={email}
           onChange={handleChange}
           />
-          </label>
-        
-  
+      </label>
+      <br />
     <button>Submit</button>
     </form>
   )

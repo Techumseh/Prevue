@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 export default function Layout(props) {
-  const { currentUser } = props
+  const { currentUser, handleLogout } = props;
   return (
     <div>
       <header>
@@ -16,11 +16,12 @@ export default function Layout(props) {
        
             <Link to='/login'>SignIn/SignUp</Link>
             )}
-      </header><hr />
+      </header>
+      <hr />
       {currentUser && (
         <React.Fragment>
-          <Link>Companies</Link>
-          <Link>Comments</Link>
+          <Link to='companies'>Companies</Link>
+          <Link to ='/comments'>Comments</Link>
         </React.Fragment>
       )}
       {props.children}
@@ -28,4 +29,3 @@ export default function Layout(props) {
   );
 };
 
-// export default Layouts;
