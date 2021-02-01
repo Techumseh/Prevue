@@ -1,4 +1,4 @@
-import api from './api-config';
+import api from './api-assist';
 
 export const createComments = async (data) => {
   const resp = await api.post('/comments', { teacher: data })

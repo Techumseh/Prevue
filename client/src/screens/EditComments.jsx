@@ -11,14 +11,14 @@ export default function EditComments(props) {
 
   useEffect(() => {
     const prefillFormData = () => {
-      const commetItem = commentss.find((commentItem) => {
-        return foodItem.id === Number(id)
+      const commentItem = comments.find((commentItem) => {
+        return commentItem.id === Number(id)
       })
       setFormData({
         name: commentItem.name
       })
     }
-    if ( commentss.length) {
+    if ( comments.length) {
       prefillFormData()
     }
   }, [comments])

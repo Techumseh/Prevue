@@ -16,14 +16,14 @@ export default function MainContainer() {
   useEffect(() => {
     const retrieveComments = async () => {
       const commentData = await getAllComments();
-      setIndustries(commentData)
+      setComments(commentData)
     }
     retrieveComments();
   }, [])
 
   useEffect(() => {
     const retrieveCompanies = async () => {
-      const industryData = await getAllCompanies();
+      const companyData = await getAllCompanies();
       setCompanies(companyData)
     }  }, [])
     
