@@ -10,7 +10,7 @@ export default function Layout(props) {
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
-            <button>SignOut</button>
+            <button onClick={handleLogout}>Sign Out</button>
           </React.Fragment>
         ) : (
        
