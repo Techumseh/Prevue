@@ -35,8 +35,8 @@ export default function MainContainer() {
           companies={companies}/>
       </route>
       <route path='/comments'>
-        <Companies 
-          companies={comments} />
+        <Comments
+          comments={comments} />
         </route>
   </Switch>
   )

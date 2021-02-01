@@ -52,7 +52,6 @@ function App() {
           handleRegister={handleRegister}/>
         </Route>
       </Switch>
-
     </Layout>
   );
 }
