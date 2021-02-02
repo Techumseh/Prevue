@@ -21,10 +21,10 @@ export default function CreateComments(props) {
       handleCreate(formData)
     }}>
       <h3>Add your comments</h3>
-      <label>Name:
+      <label>Comments:
         <input
           type='text'
-          name='name'
+          comments='comments'
           value={name}
           onChange={handleChange}
         />
