@@ -5,8 +5,13 @@ export const getAllCompanies = async () => {
   return resp.data;
 }
 
+export const getOneCompany = async (id) => {
+  const resp = await api.get(`/company/${id}`);
+  return resp.data;
+}
+
 export const postCompanies = async (companyData) => {
-  const resp = await api.post('/companies', { companies: companyData });
+  const resp = await api.post(`/companies`, { companies: companyData });
   return resp.data;
 }
 
@@ -14,8 +19,6 @@ export const deleteCompanies = async (id) => {
   const resp = await api.delete(`/companies/${id}`);
   return resp;
 }
-
-
 
 export const addCompany = async (data) => {
   const resp = await api.put('/companies', data);

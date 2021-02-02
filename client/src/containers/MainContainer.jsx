@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import CreateCompany from "../screens/CreateCompany";
 import CreateComments from "../screens/CreateComments";
-import EditComments from "../screens/EditComments";
+import EditCompany from "../screens/EditCompany";
+import CompanyDetail from '../screens/CompanyDetail'
 import { getAllCompanies } from "../services/companies";
 import { deleteComments, getAllComments, postComments, putComments, updateComments } from "../services/comments";
 import { newCompany, deleteCompanies } from 'react';
@@ -22,6 +23,14 @@ export default function MainContainer(props) {
     }
     retrieveComments();
   }, [])
+
+  useEffect(() => {
+    const retrieveCompanies = async () => {
+      const companyData = await getAllCompanies();
+      setCompanies(companyData)
+    }
+    retrieveCompanies();
+  },[])
 
   const handleCreate = async (commentData) => {
     const newComment = await postComments(commentData);
@@ -44,7 +53,7 @@ export default function MainContainer(props) {
 
 
   useEffect(() => {
-    const retrieveCompanies = async () => {
+    const getAllCompanies = async () => {
       const companyData = await getAllCompanies();
       setCompanies(companyData)
     }  }, [])
@@ -52,14 +61,26 @@ export default function MainContainer(props) {
 
   return (
   <Switch>
-      <route path='/companies'>
+      <Route path='/companies'>
         <Companies 
           companies={companies}/>
-      </route>
-      <route path='/comments'>
+      </Route>
+      <Route path='/companies/:id/edit'>
+        <EditCompany
+          companies={companies}
+          handleUpdate={handleUpdate}
+        />
+      </Route>
+      <Route path='/foods/:id'>
+        <CompanyDetail
+          companies={companies}
+        />
+        </Route>
+
+      <Route path='/comments'>
         <Comments
           comments={comments} />
-        </route>
+        </Route>
   </Switch>
   )
 }

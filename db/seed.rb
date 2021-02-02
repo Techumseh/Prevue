@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "starting"
 Industry.destroy_all
 Company.destroy_all
 User.destroy_all
-
-@admin useCreate 
+puts "starting"
+@admin= User.create(username:'Admin' , email:'jeffreybond@mac.com', password:'11111')
 
 Industry.create!(name: 'Financial')
 Industry.create!(name: 'Entertainment')
@@ -21,7 +21,7 @@ Industry.create!(name: 'Education')
 
 puts "#{Industry.count} industries created"
 
-Company.create!(name: 'Bank of America', user: @admin)
+puts Company.create!(name: 'Bank of America', user: @admin)
 Company.create!(name: 'House of Beauty', user: @admin)
 Company.create!(name: 'Grady Hospital', user: @admin)
 Company.create!(name: 'Morehouse College', user: @admin)

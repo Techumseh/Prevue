@@ -1,45 +1,45 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { addCompany} from '../services/companies';
-import { getOneComment } from '../services/companies';
+import { getOneCompany } from '../services/companies';
 
 export default function CompanyDetail(props) {
   const [companyItem, setCompanyItem] = useState(null);
-  const [commentId, setCommentId] = useState('')
+  const [companyId, setCompanyId] = useState('')
   const { id } = useParams();
 
   useEffect(() => {
     const fetchCompanyItem = async () => {
       const companyData = await getOneCompany(id);
-      setCOmpanyItem(companydata);
+      setCompanyItem(companyData);
     }
     fetchCompanyItem();
   }, [id])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const companyItem = await addCompany({ company_id: comapnyId, comment_id: id });
+    const companyItem = await addCompany({ company_id: companyId, commpany_id: id });
     setCompanyItem(companyItem);
   }
 
   
   const handleChange = (e) => {
     const { value } = e.target;
-    setCommentId(value);
+    setCompanyId(value);
   }
 
   return (
     <div>
-      <h3>{comapnyItem?.name}</h3>
-      {companyItem?.comments.map(flavor => (
-        <p key={comment.id}>{comment.name}</p>
+      <h3>{companyItem?.name}</h3>
+      {companyItem?.companies.map(company => (
+        <p key={company.id}>{company.name}</p>
       ))}
       
       <form onSubmit={handleSubmit}>
         <select defaultValue='default' onChange={handleChange}>
-          <option disabled value='default'>-- Select a comment --</option>
-          {props.comment.map(flavor => (
-            <option value={comment.id} key={comment.id}>{comment.name}</option>
+          <option disabled value='default'>-- Select a company --</option>
+          {props.company.map(company => (
+            <option value={company.id} key={company.id}>{company.name}</option>
           ))}
         </select>
         <button>add</button>
