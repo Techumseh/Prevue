@@ -78,8 +78,8 @@ export default function MainContainer(props) {
         </Route>
 
       <Route path='/comments'>
-        {/* <Comments
-          comments={comments} /> */}
+        {<Comments
+          comments={comments} />/}
         </Route>
   </Switch>
   )
