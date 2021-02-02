@@ -20,7 +20,7 @@ export default function Layout(props) {
       <hr />
       {currentUser && (
         <React.Fragment>
-          <Link to='companies'>Companies</Link>
+          <Link to='/companies'>Companies </Link>
           <Link to ='/comments'>Comments</Link>
         </React.Fragment>
       )}

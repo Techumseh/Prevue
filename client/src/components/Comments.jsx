@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Comments = (props) => {
-  const {companies} = props
+  const {comments} = props
   return (
     <div>
     {comments.map(comments => comments.name)}  

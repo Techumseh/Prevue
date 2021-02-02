@@ -35,10 +35,10 @@ export default function Login(props) {
       <br/>
     <label>Password:
      <input 
-     type='passwod'
+        type='passwod'
         name='password'
         value={password}
-          onChange={handleChange}
+        onChange={handleChange}
           />
       </label>
       <br />

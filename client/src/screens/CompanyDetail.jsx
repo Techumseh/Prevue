@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { addCompany} from '../services/companies';
+import { postComments } from '../services/comments';
 import { getOneCompany } from '../services/companies';
 
 export default function CompanyDetail(props) {
   const [companyItem, setCompanyItem] = useState(null);
   const [companyId, setCompanyId] = useState('')
+  const [formdata, setFormData] = useState('')
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,14 +19,21 @@ export default function CompanyDetail(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const companyItem = await addCompany({ company_id: companyId, commpany_id: id });
-    setCompanyItem(companyItem);
+    const newComment = await postComments(id, formdata)
+    let comments = companyItem.comments
+    comments.push(newComment)
+    setCompanyItem(prevsState => ({
+      ...prevsState, 
+      comments
+    }))
+    // const companyItem = await addCompany({ company_id: companyId, commpany_id: id });
+    // setCompanyItem(companyItem);
   }
 
   
   const handleChange = (e) => {
     const { value } = e.target;
-    setCompanyId(value);
+    setFormData(value);
   }
 
   return (
@@ -34,14 +42,24 @@ export default function CompanyDetail(props) {
       {/* {companyItem?.companies.map(company => (
         <p key={company.id}>{company.name}</p>
       ))} */}
-      
+      {
+        companyItem?.comments.map(comments => {
+          return <div>{
+            comments.comment_text
+          }</div>
+        })
+      }
       <form onSubmit={handleSubmit}>
-        <select defaultValue='default' onChange={handleChange}>
-          <option disabled value='default'>-- Select a company --</option>
-          {/* {props.companies.map(company => (
-            <option value={company.id} key={company.id}>{company.name}</option>
-          ))} */}
-        </select>
+        <textarea
+          onChange={
+            handleChange
+        }
+          value={
+            formdata
+          }
+        />
+          
+       
         <button>add</button>
       </form>
     </div>

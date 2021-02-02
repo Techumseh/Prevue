@@ -16,12 +16,12 @@ export const readOneComments = async (id) => {
 }
 
 export const updateComments = async (id, data) => {
-  const resp = await api.put(`/comments/${id}`, { comment : data })
+  const resp = await api.put(`/comments/${id}`, { comment: data })
   return resp.data
 }
 
 export const postComments = async (id, data) => {
-  const resp = await api.post(`/comments/${id}`, { comment : data })
+  const resp = await api.post(`companies/${id}/comments/`, { comment: {comment_text: data } })
   return resp.data
 }
 
@@ -31,6 +31,6 @@ export const deleteComments = async (id) => {
 }
 
 export const putComments = async (id, data) => {
-  const resp = await api.put(`/comments/${id}`, { comment : data })
+  const resp = await api.put(`/comments/${id}`, { comment: data })
   return resp.data
 }

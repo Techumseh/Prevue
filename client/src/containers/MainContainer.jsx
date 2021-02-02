@@ -8,7 +8,8 @@ import { getAllCompanies } from "../services/companies";
 import { deleteComments, getAllComments, postComments, putComments, updateComments } from "../services/comments";
 import { newCompany, deleteCompanies } from 'react';
 import Companies from '../components/Companies';
-
+import Comments from '../components/Comments';
+import EditComments from '../screens/EditComments';
 
 export default function MainContainer(props) {
   const [companies, setCompanies] = useState([]);
@@ -19,7 +20,7 @@ export default function MainContainer(props) {
   useEffect(() => {
     const retrieveComments = async () => {
       const commentData = await getAllComments();
-      setComments(commentData)
+      retrieveComments(commentData)
     }
     retrieveComments();
   }, [])
@@ -61,7 +62,7 @@ export default function MainContainer(props) {
 
   return (
   <Switch>
-      <Route path='/companies'>
+      <Route exact path='/companies'>
         <Companies 
           companies={companies}/>
       </Route>
@@ -71,15 +72,18 @@ export default function MainContainer(props) {
           handleUpdate={handleUpdate}
         />
       </Route>
-      <Route path='/foods/:id'>
+      <Route path='/companies/:id'>
         <CompanyDetail
           companies={companies}
         />
         </Route>
-
       <Route path='/comments'>
-        {<Comments
-          comments={comments} />/}
+        <Comments
+          comments={comments} />
+      </Route>
+      <Route path='/comments/:id'>
+         <EditComments
+          comments={comments} /> 
         </Route>
   </Switch>
   )
