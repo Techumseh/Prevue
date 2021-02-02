@@ -7,7 +7,7 @@ import CompanyDetail from '../screens/CompanyDetail'
 import { getAllCompanies } from "../services/companies";
 import { deleteComments, getAllComments, postComments, putComments, updateComments } from "../services/comments";
 import { newCompany, deleteCompanies } from 'react';
-import { Companies, Comments } from 'react';
+import Companies from '../components/Companies';
 
 
 export default function MainContainer(props) {
@@ -78,8 +78,8 @@ export default function MainContainer(props) {
         </Route>
 
       <Route path='/comments'>
-        <Comments
-          comments={comments} />
+        {/* <Comments
+          comments={comments} /> */}
         </Route>
   </Switch>
   )

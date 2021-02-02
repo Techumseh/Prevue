@@ -6,6 +6,7 @@ import MainContainer from "./containers/MainContainer";
 import Register from './screens/Register';
 import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth";
 import Header from './Header';
+import CompanyDetail from './screens/CompanyDetail';
 
 
 function App() {
@@ -52,10 +53,13 @@ function App() {
           <Register
           handleRegister={handleRegister}/>
         </Route>
-        <Route path='/'>
+        <Route exact path='/'>
           <MainContainer
             currentUser={currentUser}
            />
+        </Route>
+        <Route path='/companies/:id'>
+          <CompanyDetail/>
         </Route>
       </Switch>
     </Layout>

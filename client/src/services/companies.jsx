@@ -6,7 +6,7 @@ export const getAllCompanies = async () => {
 }
 
 export const getOneCompany = async (id) => {
-  const resp = await api.get(`/company/${id}`);
+  const resp = await api.get(`/companies/${id}`);
   return resp.data;
 }
 

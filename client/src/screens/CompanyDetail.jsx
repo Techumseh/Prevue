@@ -31,16 +31,16 @@ export default function CompanyDetail(props) {
   return (
     <div>
       <h3>{companyItem?.name}</h3>
-      {companyItem?.companies.map(company => (
+      {/* {companyItem?.companies.map(company => (
         <p key={company.id}>{company.name}</p>
-      ))}
+      ))} */}
       
       <form onSubmit={handleSubmit}>
         <select defaultValue='default' onChange={handleChange}>
           <option disabled value='default'>-- Select a company --</option>
-          {props.company.map(company => (
+          {/* {props.companies.map(company => (
             <option value={company.id} key={company.id}>{company.name}</option>
-          ))}
+          ))} */}
         </select>
         <button>add</button>
       </form>
