@@ -169,8 +169,7 @@ https://wireframe.cc/duGgIK
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
+> Social media integration, Google/Apple maps integration, DoorDash, UberEats, integration
 ***
 
 ## Code Showcase
@@ -179,4 +178,4 @@ https://wireframe.cc/duGgIK
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+> All of the issues. All of them
