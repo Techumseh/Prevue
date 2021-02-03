@@ -1,4 +1,7 @@
 # PROJECT 4 Prevue
+https://dazzling-albattani-ad424b.netlify.app/
+
+https://dashboard.heroku.com/apps/prevue-api
 
 > The Project Planning section **should be completed** for your project pitch with instructors.
 >
@@ -24,7 +27,7 @@
 
 ## Overview
 
-**Prevue** is an app to discover, rate and review local businesses. Each user has the ability to read reviews of businesses and delete them as necessary. Admin users have the ability to add their business as well as delete them. Only registered users will have the ability to rate and view businesses.
+**Prevue** is an app to discover, rate and review local businesses. Each user has the ability to read reviews of businesses and delete them as necessary. Admin users have the ability to add their comments as well as delete them. Only registered users will have the ability to rate and view businesses.
 
 <br>
 
