@@ -1,37 +1,91 @@
-import { Switch } from "react-router-dom"
-import { useState } from React
-import { Switch } from 'react-router-dom'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
+import CreateCompany from "../screens/CreateCompany";
+import CreateComments from "../screens/CreateComments";
+import EditCompany from "../screens/EditCompany";
+import CompanyDetail from '../screens/CompanyDetail'
+import { getAllCompanies } from "../services/companies";
+import { deleteComments, getAllComments, postComments, putComments, updateComments } from "../services/comments";
+import { newCompany, deleteCompanies } from 'react';
+import Companies from '../components/Companies';
+import Comments from '../components/Comments';
+import EditComments from '../screens/EditComments';
 
-
-export default function MainContainer() {
+export default function MainContainer(props) {
   const [companies, setCompanies] = useState([]);
-  const [industries, setIndustries] = useState([]);
+  const [comments, setComments] = useState([]);
+  const history = useHistory;
+  const { currentUser } = props;
 
   useEffect(() => {
-    const retrieveIndustries = async () => {
-      const industryData = await getAllIndustries();
-      setIndustries(industryData)
-    }  }, [])
+    const retrieveComments = async () => {
+      const commentData = await getAllComments();
+      retrieveComments(commentData)
+    }
+    retrieveComments();
+  }, [])
 
   useEffect(() => {
     const retrieveCompanies = async () => {
-      const industryData = await getAllCompanies();
+      const companyData = await getAllCompanies();
+      setCompanies(companyData)
+    }
+    retrieveCompanies();
+  },[])
+
+  const handleCreate = async (commentData) => {
+    const newComment = await postComments(commentData);
+    setCompanies(prevState => [...prevState, newCompany])
+    history.push('/companies')
+  }
+  const handleDelete = async (id) => {
+    await deleteCompanies(id);
+    setComments(prevState => prevState.filter(commentItem => {
+      return commentItem.id !== id
+    }))
+  }
+  const handleUpdate = async (id, commentData) => {
+    const updatedComment = await putComments(id, commentData);
+    setComments(prevState => prevState.map(commentItem => {
+      return commentItem.id === Number(id) ? updatedComment : commentItem
+    }))
+    history.push('/comments')
+  }
+
+
+  useEffect(() => {
+    const getAllCompanies = async () => {
+      const companyData = await getAllCompanies();
       setCompanies(companyData)
     }  }, [])
     
-  }, [])
 
   return (
   <Switch>
-      <route path='/companies'>
+      <Route exact path='/companies'>
         <Companies 
           companies={companies}/>
-      </route>
-      <route path='/industries'>
-        <Companies 
-          companies={industries} />
-        </route>
+      </Route>
+      <Route path='/companies/:id/edit'>
+        <EditCompany
+          companies={companies}
+          handleUpdate={handleUpdate}
+        />
+      </Route>
+      <Route path='/companies/:id'>
+        <CompanyDetail
+          companies={companies}
+          currentUser={currentUser}
+        />
+        </Route>
+      <Route exact path='/comments'>
+        <Comments
+          comments={comments} />
+      </Route>
+      <Route path='/comments/:id'>
+         <EditComments
+          comments={comments} /> 
+        </Route>
   </Switch>
   )
 }

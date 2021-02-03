@@ -2,30 +2,32 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 export default function Layout(props) {
-  const { currentUser } = props
+  const { currentUser, handleLogout } = props;
   return (
     <div>
       <header>
-        <h1>Prevue</h1>
+        <h1>PREVUE</h1>
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
-            <button>SignOut</button>
+            <button onClick={handleLogout}>Sign Out</button>
           </React.Fragment>
         ) : (
        
             <Link to='/login'>SignIn/SignUp</Link>
             )}
-      </header><hr />
+      
+      </header>
       {currentUser && (
         <React.Fragment>
-          <Link>Companies</Link>
-          <Link>Industries</Link>
+          <Link to='/companies'>Companies </Link>
+          <Link to ='/comments'>Comments</Link>
         </React.Fragment>
       )}
-      {props.children}
+        {props.children}
+      
     </div>
+    
   );
 };
 
-// export default Layouts;

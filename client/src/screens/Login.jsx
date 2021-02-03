@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-export default function Login() {
+
+export default function Login(props) {
   const [formData, setFormdata] = useState({
     username: '',
     password: ''
   })
   const { username, password } = formData;
+  const { handleLogin } = props;
+
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,16 +35,16 @@ export default function Login() {
       <br/>
     <label>Password:
      <input 
-     type='passwod'
+        type='passwod'
         name='password'
         value={password}
-          onChange={handleChange}
+        onChange={handleChange}
           />
-    </label>
-    <Link>Register</Link>
+      </label>
+      <br />
+    <Link to='/register'>Register</Link>
     <button>Submit</button>
     </form>
   )
 }
 
-// export default Login;

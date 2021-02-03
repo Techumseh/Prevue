@@ -1,9 +1,12 @@
-import logo from './logo.svg';
-import Layout from "./layouts/Layouts"
-import { Switch, useHistory } from 'react-router-dom';
-import Login from './screens/Login.jsx'
 import { useEffect, useState } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import Layout from "./layouts/Layouts"
+import Login from './screens/Login.jsx'
+import MainContainer from "./containers/MainContainer";
 import Register from './screens/Register';
+import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth";
+import CompanyDetail from './screens/CompanyDetail';
+import Header from "./Header"
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -45,12 +48,19 @@ function App() {
           <Login 
             handleLogin={handleLogin} />
         </Route>
-        <Route>
+        <Route path='/register'>
           <Register
           handleRegister={handleRegister}/>
         </Route>
+        {/* <Route path='/companies/:id'>
+          <CompanyDetail/>
+      </Route> */}
+      <Route path='/'>
+          <MainContainer
+            currentUser={currentUser}
+          />
+          </Route>
       </Switch>
-
     </Layout>
   );
 }
