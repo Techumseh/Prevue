@@ -6,7 +6,7 @@ export default function Layout(props) {
   return (
     <div>
       <header>
-        <h1>Prevue</h1>
+        <h1>PREVUE</h1>
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
@@ -16,16 +16,18 @@ export default function Layout(props) {
        
             <Link to='/login'>SignIn/SignUp</Link>
             )}
+      
       </header>
-      <hr />
       {currentUser && (
         <React.Fragment>
           <Link to='/companies'>Companies </Link>
           <Link to ='/comments'>Comments</Link>
         </React.Fragment>
       )}
-      {props.children}
+        {props.children}
+      
     </div>
+    
   );
 };
 

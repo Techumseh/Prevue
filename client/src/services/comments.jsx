@@ -1,7 +1,7 @@
 import api from './api-assist';
 
 export const createComments = async (data) => {
-  const resp = await api.post('/comments', { teacher: data })
+  const resp = await api.post('/comments', { comment: data })
   return resp.data
 }
 
@@ -10,12 +10,12 @@ export const getAllComments = async () => {
   return resp.data
 }
 
-export const readOneComments = async (id) => {
+export const readOneComment = async (id) => {
   const resp = await api.get(`/comments/${id}`);
   return resp.data
 }
 
-export const updateComments = async (id, data) => {
+export const updateComment = async (id, data) => {
   const resp = await api.put(`/comments/${id}`, { comment: data })
   return resp.data
 }

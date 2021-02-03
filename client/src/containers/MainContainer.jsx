@@ -75,9 +75,10 @@ export default function MainContainer(props) {
       <Route path='/companies/:id'>
         <CompanyDetail
           companies={companies}
+          currentUser={currentUser}
         />
         </Route>
-      <Route path='/comments'>
+      <Route exact path='/comments'>
         <Comments
           comments={comments} />
       </Route>
