@@ -10,7 +10,7 @@ Industry.destroy_all
 Company.destroy_all
 User.destroy_all
 puts "starting"
-@admin= User.create(username:'Admin' , email:'jeffreybond@mac.com', password:'11111')
+@admin= User.create(username:'Admin' , email:'jeffreybond@mac.com', password:'111111')
 
 Industry.create!(name: 'Financial')
 Industry.create!(name: 'Entertainment')
