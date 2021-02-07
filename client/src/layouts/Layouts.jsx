@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './Layouts.css'
+import Nav from "../components/Nav"
 
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
-    <div>
+    <div className="home-container" >
       <header>
-        <h1>pre:vue </h1><h3>check it out before you check it out</h3>
+        <h1 className= "header-div">pre:vue </h1><h3>check it out before you check it out</h3>
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
