@@ -6,7 +6,8 @@ import MainContainer from "./containers/MainContainer";
 import Register from './screens/Register';
 import { loginUser, registerUser, verifyUser, removeToken } from "./services/auth";
 import CompanyDetail from './screens/CompanyDetail';
-import Header from "./Header"
+import Nav from "./components/Nav";
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)

@@ -1,0 +1,16 @@
+#nav-link {
+  text-decoration: none;
+  color: black;
+  /* font-size: 34px; */
+}
+
+.header-div h1 {
+  font-family: "helvetica", cursive;
+  letter-spacing: -3px;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.header-div {
+  border-bottom: 2px solid #cecece;
+}

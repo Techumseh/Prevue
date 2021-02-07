@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div>
       <header>
-        <h1>PREVUE</h1>
+        <h1>pre:vue </h1><h3>check it out before you check it out</h3>
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>

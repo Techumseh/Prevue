@@ -1,0 +1,33 @@
+.detail-container {
+  display: flex;
+}
+
+#detail-image {
+  width: 60vw;
+  height: auto;
+  margin: 40px;
+}
+
+.product-detail-container {
+  width: 30vw;
+  margin: 40px;
+  line-height: 25px;
+}
+
+.product-detail-container h1 {
+  font-size: 50px;
+  line-height: 70px;
+  margin: 0px;
+  font-weight: 400px;
+}
+
+@media (max-width: 850px) {
+  .detail-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .product-detail-container {
+    margin: 15px;
+  }
+}

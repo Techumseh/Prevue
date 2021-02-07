@@ -10,6 +10,7 @@ import { newCompany, deleteCompanies } from 'react';
 import Companies from '../components/Companies';
 import Comments from '../components/Comments';
 import EditComments from '../screens/EditComments';
+import { Nav } from '../components/Nav';
 
 export default function MainContainer(props) {
   const [companies, setCompanies] = useState([]);
