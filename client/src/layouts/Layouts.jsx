@@ -9,7 +9,7 @@ export default function Layout(props) {
   return (
     <div className="home-container" >
       <header className="header-div">
-        <h1 className= "header">pre:vue check it out before you check it out</h1><br />
+        <h1 className= "header"><img src="../assets/logo.png"></img> check it out before you check it out</h1><br />
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
