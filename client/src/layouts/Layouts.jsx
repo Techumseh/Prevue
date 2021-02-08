@@ -8,8 +8,8 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div className="home-container" >
-      <header>
-        <h1 className= "header-div">pre:vue </h1><h3>check it out before you check it out</h3>
+      <header className="header-div">
+        <h1 className= "header">pre:vue check it out before you check it out</h1><br />
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>

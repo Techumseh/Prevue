@@ -5,3 +5,16 @@
   justify-content: center;
   margin: 0px; 
 }
+
+.header-div {
+text-align: left;
+width: 100%;
+flex-direction: column;
+}
+.header {
+  flex-direction: column;
+  font-family: 'helvetica', sans-serif;
+ 
+
+}
+
