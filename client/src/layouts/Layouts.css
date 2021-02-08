@@ -5,31 +5,37 @@
   justify-content: center;
   margin: 15px; 
   font-family: 'Roboto';
+  font-size: 16;
 }
 
 .header-div {
 width: 100%;
-flex-direction: column;
 justify-content: center;
+font-family: 'Roboto';
+font-size: 18px;
 }
 .header {
   display: flex;
   justify-content: center;
   flex-direction: column;
  
-  font-size: 28px;
 }
 a:link {
-color:black;
+color:white;
 text-decoration: none;
 }
 
 a:visited {
-  color: black
+  color: white
 }
  a:hover {
    color:cadetblue
  }
  a:active {
    color: deeppink;
+ }
+
+ body {
+   background-color:navy;
+   color: white;
  }
