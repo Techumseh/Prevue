@@ -10,7 +10,8 @@
 
 .header-div {
 width: 100%;
-justify-content: center;
+text-align: center;
+margin-top: 25;
 font-family: 'Roboto';
 font-size: 18px;
 }
@@ -18,8 +19,8 @@ font-size: 18px;
   display: flex;
   justify-content: center;
   flex-direction: column;
- 
 }
+
 a:link {
 color:white;
 text-decoration: none;
@@ -39,3 +40,4 @@ a:visited {
    background-color:navy;
    color: white;
  }
+ 

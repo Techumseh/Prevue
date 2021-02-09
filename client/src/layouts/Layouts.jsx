@@ -8,8 +8,8 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div className="home-container" >
-      <header className="header"><img src="https://i.imgur.com/Rfq2AtR.png" width="100" height='100'></img> 
-        <div className="header-div">check it out before you check it out</div>
+      <header className="header"><a href="/"><img src="https://i.imgur.com/wLpR0Xt.png" width="100" height='100'></img></a>
+        <div >check it out before you check it out</div>
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
@@ -19,7 +19,7 @@ export default function Layout(props) {
        
             <Link to='/login'>Sign In/Sign Up</Link>
             )}
-      
+      <div className="header-div"/>
       </header>
       {currentUser && (
         <React.Fragment>
@@ -29,8 +29,8 @@ export default function Layout(props) {
       )}
         {props.children}
       
-    </div>
-    
+    </div>  
   );
+  
 };
 
