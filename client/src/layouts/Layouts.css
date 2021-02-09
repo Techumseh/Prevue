@@ -4,34 +4,31 @@
   flex-direction: column;
   justify-content: center;
   margin: 25px; 
+  margin-left: 5px;
   font-family: 'Roboto';
   font-size: 16;
 }
 
 .header-div {
 width: 100%;
-text-align: center;
+text-align: inline;
 margin: auto;
 margin-top: 4;
 font-family: 'Roboto';
 font-size: 18px;
 }
 .header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: inline;
   text-align: center;
 }
-.header2 {
-  justify-content: left;
-  flex-direction: row-reverse;
-  text-align: right;
-  margin: 10px;
-}
+
+
+
 .button {
   width: 75px;
   transition-duration: 0.4s;
 }
+
 
 .button:hover {
   color:blue;

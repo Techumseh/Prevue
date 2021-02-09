@@ -17,7 +17,7 @@ export default function Layout(props) {
           </React.Fragment>
         ) : (
        
-            <Link className="header2" to='/login'>Sign In/Sign Up</Link>
+            <Link className="button2" to='/login'><button>Sign In/Sign Up</button></Link>
             )}
       <div className="header-div"/>
       </header>

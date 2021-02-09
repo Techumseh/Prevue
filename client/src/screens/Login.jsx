@@ -42,7 +42,7 @@ export default function Login(props) {
           />
       </label>
       <br />
-      <button className="button">Submit</button><br />
+      <button >Submit</button><br />
       <Link to='/register'>No Account? Click here to Register</Link>
       </form>
   )
