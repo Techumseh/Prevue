@@ -12,12 +12,12 @@ export default function Layout(props) {
         <div >check it out before you check it out</div>
         {currentUser ? (
           <React.Fragment>
-            <p>{currentUser.userName}</p>
+            <div>{currentUser.userName}</div>
             <button className="button" onClick={handleLogout}>Sign Out</button>
           </React.Fragment>
         ) : (
        
-            <Link to='/login'>Sign In/Sign Up</Link>
+            <Link className="header2" to='/login'>Sign In/Sign Up</Link>
             )}
       <div className="header-div"/>
       </header>
