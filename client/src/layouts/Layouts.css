@@ -23,7 +23,7 @@ font-size: 18px;
 }
 
 .button {
-  width: auto;
+  width: 75px;
   transition-duration: 0.4s;
 }
 
@@ -50,4 +50,9 @@ a:visited {
    background-color:navy;
    color: white;
  }
- 
+ label {
+   text: center;
+   margin:auto;
+  padding: 10px 10px 10px 0;
+  display: inline-block;
+}
