@@ -40,7 +40,7 @@ export default function Register(props) {
         />
       </label>
       <br/>
-        <label>Email
+        <label>Email:   
           <input 
           type='email'
           name='email'
@@ -49,7 +49,7 @@ export default function Register(props) {
           />
       </label>
       <br />
-    <button>Submit</button>
+    <button className="button">Submit</button>
     </form>
   )
 }

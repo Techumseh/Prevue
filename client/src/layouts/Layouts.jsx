@@ -13,7 +13,7 @@ export default function Layout(props) {
         {currentUser ? (
           <React.Fragment>
             <p>{currentUser.userName}</p>
-            <button onClick={handleLogout}>Sign Out</button>
+            <button className="button" onClick={handleLogout}>Sign Out</button>
           </React.Fragment>
         ) : (
        
@@ -24,7 +24,7 @@ export default function Layout(props) {
       {currentUser && (
         <React.Fragment>
           <Link to='/companies'>Browse Companies </Link>
-          <Link to ='/comments'>Comments</Link>
+ 
         </React.Fragment>
       )}
         {props.children}
